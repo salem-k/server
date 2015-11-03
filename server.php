@@ -36,16 +36,16 @@
        <a href="javascript:void(0)" class="setOperation" id="img1">
        		<img src="1.jpg" />
 	   </a>
-       <a href="javascript:void(0)" class="setOperation" id="img2">
+       <a href="javascript:void(0)" class="setOperationImage" id="img2">
        		<img src="2.jpg" />
 	   </a>
-       <a href="javascript:void(0)" class="setOperation" id="img3">
+       <a href="javascript:void(0)" class="setOperationImage" id="img3">
        		<img src="3.jpg" />
 	   </a>
-       <a href="javascript:void(0)" class="setOperation" id="img4">
+       <a href="javascript:void(0)" class="setOperationImage" id="img4">
        		<img src="4.jpg" />
 	   </a>
-       <a href="javascript:void(0)" class="setOperation" id="img5">
+       <a href="javascript:void(0)" class="setOperationImage" id="img5">
        		<img src="5.jpg" />
 	   </a>
 	</p>
@@ -57,14 +57,14 @@
 	
 //	setTimeout(
 	setInterval(function(){
-		$("#operationencours").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/operation.txt");
+		$("#operationencours").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/operation.txt");
 
 	}, 2000);
 	
     $('.setOperation').click(function(){
       var id = $(this).attr("id");
       id = id.replace('id','');
-	$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/index.php?operation=color"+"&content="+id);      
+	$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color"+"&content="+id);      
     });
   });
 </script>
