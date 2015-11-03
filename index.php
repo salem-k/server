@@ -34,7 +34,7 @@
        <a href="javascript:void(0)" class="setOperation btn btn-lg btn-danger" id="idD11F34">Ecran Rouge</a>
        <a href="javascript:void(0)" class="setOperation btn btn-lg btn-warning" id="idD1D11F">Ecran Jaune</a>
        
-       <a href="javascript:sequences()" class="btn btn-lg btn-warning">Sequences couleurs ecrans</a>
+       <a href="javascript:void(0)" id="sequences" class="btn btn-lg btn-warning">Sequences couleurs ecrans</a>
        
        <a href="javascript:void(0)" class="setOperation" id="img1">
        		<img src="1.jpg" />
@@ -72,30 +72,44 @@
 	  $("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color"+"&content="+id);
     });
     
-    
+  $("#sequences").click(function(){
+
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0DBD13");
+  		}, 10000);
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D11F34");
+	  	}, 20000);
+  		setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D1D11F");
+	  	}, 30000);
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0909E3");
+	  	}, 40000);
+	  	  
+  	setInterval(function(){  	
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0DBD13");
+  		}, 10000);
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D11F34");
+	  	}, 20000);
+  		setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D1D11F");
+	  	}, 30000);
+	  	setTimeout(function(){
+			$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0909E3");
+	  	}, 40000);
+
+		console.log(123);
+  	}, 50000);
+
+  });
 
     
   });
 
-  function sequences(){
-  	setInterval(function(){
-  	
-  	setTimeout(function(){
-		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0DBD13");
-  	}, 10000);
-  	setTimeout(function(){
-		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D11F34");
-  	}, 20000);
-  	setTimeout(function(){
-		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D1D11F");
-  	}, 30000);
-  	setTimeout(function(){
-		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0909E3");
-  	}, 40000);
-  	
-  	}, 50000);
 
-  }
 </script>
 <?php
 
