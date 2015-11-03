@@ -60,11 +60,14 @@
 		$("#operationencours").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/operation.txt");
 
 	}, 2000);
-	
+    $('.setOperationImage').click(function(){
+      var id = $(this).attr("id");
+	  $("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=image"+"&content="+id);
+    });
     $('.setOperation').click(function(){
       var id = $(this).attr("id");
-      id = id.replace('id','');
-	$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color"+"&content="+id);      
+      id = id.replace("id","");
+	  $("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color"+"&content="+id);
     });
   });
 </script>
