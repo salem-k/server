@@ -16,7 +16,7 @@
   <div id="operationencours" style="text-align: center;border: 1px solid #3D53AD;height: 39px;font-size: 13px;padding: 10px;"></div>
   <br />
   <div id="result" style="border:1px solid #3E9621;text-align: center;height: 39px;font-size: 13px;padding: 10px;"></div>
-  
+
 <?php
   /*
   <a href="javascript:void(0)" id="id0909E3" class="setOperation">Ecran BLEU</a><br />
@@ -29,10 +29,13 @@
        <h1>Actions</h1>
      </div>
 	<p>
-       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-primary" id="id0909E3">Ecrant Bleu</a>
-       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-success" id="id0DBD13">Ecrant Vert</a>
-       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-danger" id="idD11F34">Ecrant Rouge</a>
-       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-warning" id="idD1D11F">Ecrant Jaune</a>
+       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-primary" id="id0909E3">Ecran Bleu</a>
+       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-success" id="id0DBD13">Ecran Vert</a>
+       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-danger" id="idD11F34">Ecran Rouge</a>
+       <a href="javascript:void(0)" class="setOperation btn btn-lg btn-warning" id="idD1D11F">Ecran Jaune</a>
+       
+       <a href="javascript:sequences()" class="setOperation btn btn-lg btn-warning">Sequences couleurs ecrans</a>
+       
        <a href="javascript:void(0)" class="setOperation" id="img1">
        		<img src="1.jpg" />
 	   </a>
@@ -54,12 +57,11 @@
 
 <script>
   $(document).ready(function(){
-	
-//	setTimeout(
+
 	setInterval(function(){
 		$("#operationencours").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/operation.txt");
-
 	}, 2000);
+
     $('.setOperationImage').click(function(){
       var id = $(this).attr("id");
 	  $("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=image"+"&content="+id);
@@ -69,7 +71,31 @@
       id = id.replace("id","");
 	  $("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color"+"&content="+id);
     });
+    
+    
+
+    
   });
+
+  function sequences(){
+  	setInterval(function(){
+  	
+  	setTimeout(function(){
+		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0DBD13");
+  	}, 10000);
+  	setTimeout(function(){
+		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D11F34");
+  	}, 20000);
+  	setTimeout(function(){
+		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=D1D11F");
+  	}, 30000);
+  	setTimeout(function(){
+		$("#result").load("http://ec2-52-32-10-107.us-west-2.compute.amazonaws.com/back/server/index.php?operation=color&content=0909E3");
+  	}, 40000);
+  	
+  	}, 50000);
+
+  }
 </script>
 <?php
 
