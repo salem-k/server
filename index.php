@@ -34,7 +34,7 @@
        <a href="javascript:void(0)" class="setOperation btn btn-lg btn-danger" id="idD11F34">Ecran Rouge</a>
        <a href="javascript:void(0)" class="setOperation btn btn-lg btn-warning" id="idD1D11F">Ecran Jaune</a>
        
-       <a href="javascript:sequences()" class="setOperation btn btn-lg btn-warning">Sequences couleurs ecrans</a>
+       <a href="javascript:sequences()" class="btn btn-lg btn-warning">Sequences couleurs ecrans</a>
        
        <a href="javascript:void(0)" class="setOperation" id="img1">
        		<img src="1.jpg" />
